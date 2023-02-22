@@ -1,0 +1,35 @@
+// C++ code
+//
+class Led{
+
+private:
+  int _pin;
+public:
+  Led(){}
+  Led (int pin){
+  
+  this->_pin=pin;
+  }
+  void beging(){
+    pinMode(_pin, OUTPUT);
+  }
+  void on(){
+  digitalWrite(_pin, 1);
+  }
+  void off(){
+  digitalWrite(_pin, 0);
+  }
+};
+Led Red(13);
+void setup()
+{
+  Red.beging();
+}
+
+void loop()
+{
+  Red.on();
+  delay(1000); // Wait for 1000 millisecond(s)
+  Red.off();
+  delay(1000); // Wait for 1000 millisecond(s)
+}
